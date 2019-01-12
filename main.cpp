@@ -103,3 +103,12 @@ T* shared_ptr<T>::get() const
 {
     return ptr_;
 }
+
+int main()
+{
+    shared_ptr<int> My_ptr1(new int(3));
+    std::cout << My_ptr1.use_count();
+    shared_ptr<int> My_ptr2 = My_ptr1;
+    std::cout << My_ptr1.use_count();
+    return 0;
+}
